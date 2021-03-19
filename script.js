@@ -1,22 +1,19 @@
 
-let dobro = () => {
-    console.log(this.x*2)
+let alunos = ["Lucas", "Lais", "Selina"]
+
+function addAluno(nome, callback){
+    setTimeout(() => {
+        alunos.push(nome);
+        callback();
+    }, 2000);
+
+   
 }
 
-let dobro = (x) => {
-    console.log(x*2)
+function listarAlunos(){
+    console.log(alunos)
 }
 
-let dobro = x => console.log(x*2)
+addAluno("Carlos", listarAlunos);
 
-let dobro = function(){
-    console.log(this.x*2)
-}
-
-let numero = {
-    x: 8,
-    calc: dobro
-}
-
-dobro(15);
 
