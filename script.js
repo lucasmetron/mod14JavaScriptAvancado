@@ -1,23 +1,22 @@
 
-function executar (){
-
-    console.log(this.som)
+let dobro = () => {
+    console.log(this.x*2)
 }
 
-var galinha = {
-    som: "pó pó",
-    falar: executar ,
+let dobro = (x) => {
+    console.log(x*2)
 }
 
-var pato = {
-    som: "quén quén",
-    falar: executar ,
+let dobro = x => console.log(x*2)
+
+let dobro = function(){
+    console.log(this.x*2)
 }
 
-// pato.falar()
-// galinha.falar()
+let numero = {
+    x: 8,
+    calc: dobro
+}
 
-executar()
+dobro(15);
 
-var emitir = executar.bind(pato)
-emitir();
