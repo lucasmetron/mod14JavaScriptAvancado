@@ -1,31 +1,25 @@
-let usuario = ["adriano","marcia","jose"]
 
-function inserirUsuario(nome){
-
-    let promise = new Promise (function(resolve, reject){
-    
-        setTimeout(() => {
-            usuario.push(nome);
-            let erro = false;
-
-            if (!erro){
-                resolve()
-            } else {
-                reject({msg: "Erro de conexão"})
-            }
-        }, 1000);
-         
-    })
-    return promise;
+let novoAluno = (nome, idade) => {
+    return {nome, idade}
 }
 
-function listarUsuarios(){
-    console.log(usuario)
+let alunos = [
+    novoAluno("Mario",23),
+    novoAluno("Jose",45),
+    novoAluno("Marcia", 29),
+    novoAluno("Joao", 35)
+];
+
+function temMenos30(aluno){
+    return aluno.idade < 30
 }
 
-async function executar (){
-    await inserirUsuario("lucas")
-    listarUsuarios();
+function temMais30(aluno){
+    return aluno.idade >= 30
 }
 
-executar();
+let alunosMenos30 = alunos.filter(temMenos30)
+let alunosMaior30 = alunos.filter(temMais30)
+
+console.log(alunosMenos30)
+console.log(alunosMaior30)
