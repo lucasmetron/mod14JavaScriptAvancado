@@ -1,38 +1,24 @@
+function speakGeneric(){
 
-let alunos = ["Lucas", "Lais", "Selina"]
-
-function addAluno(nome){
-
-    let promise = new Promise(function(resolve, reject){
-
-        setTimeout(() => {
-            alunos.push(nome);
-            let error = false;
-
-            if(!error){
-                resolve()
-            }else{
-                reject({msg: "erro 1"})
-            }
-
-
-        }, 1000);
-
-    })
-
-
-    return promise
-
-
-   
+    console.log(this.sound)
 }
 
-function listarAlunos(){
-    console.log(alunos)
+
+let dog = {
+    sound: "au au",
+    speak: speakGeneric
 }
 
-addAluno("Carlos")
-.then(listarAlunos)
-.catch((error) => {console.log(error.msg)});
+let cat = {
+    sound: "miau",
+    speak: speakGeneric
+}
+
+// dog.speak();
+// cat.speak();
 
 
+// speakGeneric();
+
+let binded = speakGeneric.bind(dog);
+binded();
