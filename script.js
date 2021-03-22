@@ -1,24 +1,29 @@
-function speakGeneric(){
-
-    console.log(this.sound)
+function dobro (x){
+    console.log(this.x*2)
 }
 
-
-let dog = {
-    sound: "au au",
-    speak: speakGeneric
+let triplo = function (y){
+console.log(this.x*3)
 }
 
-let cat = {
-    sound: "miau",
-    speak: speakGeneric
+let quadruplo = z => z*4
+
+let numero = {
+    x: 5,
+    calc: dobro
 }
 
-// dog.speak();
-// cat.speak();
+let numero1 = {
+    x: 100,
+    calc: dobro
+}
 
+let numero2 = {
+    x: 5,
+    calc: dobro
+}
 
-// speakGeneric();
+numero.calc()
 
-let binded = speakGeneric.bind(dog);
-binded();
+let numBind = dobro.bind(numero1)
+numBind();
