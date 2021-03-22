@@ -23,8 +23,9 @@ function listarUsuarios(){
     console.log(usuario)
 }
 
-inserirUsuario("lucas")
-.then(listarUsuarios)
-.catch((erro)=>{
-    console.log(erro.msg)
-})
+async function executar (){
+    await inserirUsuario("lucas")
+    listarUsuarios();
+}
+
+executar();
