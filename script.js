@@ -1,34 +1,30 @@
-
-// Exemplo simples de callback
-
-// function ola(){
-//     console.log("ola")
-// }
-
-// function tchau(){
-//     console.log("tchau")
-// }
-
-
-// function saudacao(s,nome){
-//     s();
-//     console.log(nome)
-// }
-
-
-saudacao(tchau, "lucas")
-
 let usuario = ["adriano","marcia","jose"]
 
-function inserirUsuario(nome, callback){
-    setTimeout(() => {
-        usuario.push(nome);
-        callback();
-    }, 1000);
+function inserirUsuario(nome){
+
+    let promise = new Promise (function(resolve, reject){
+    
+        setTimeout(() => {
+            usuario.push(nome);
+            let erro = false;
+
+            if (!erro){
+                resolve()
+            } else {
+                reject({msg: "Erro de conexão"})
+            }
+        }, 1000);
+         
+    })
+    return promise;
 }
 
 function listarUsuarios(){
     console.log(usuario)
 }
 
-inserirUsuario("lucas", listarUsuarios)
+inserirUsuario("lucas")
+.then(listarUsuarios)
+.catch((erro)=>{
+    console.log(erro.msg)
+})
