@@ -1,29 +1,34 @@
-function dobro (x){
-    console.log(this.x*2)
+
+// Exemplo simples de callback
+
+// function ola(){
+//     console.log("ola")
+// }
+
+// function tchau(){
+//     console.log("tchau")
+// }
+
+
+// function saudacao(s,nome){
+//     s();
+//     console.log(nome)
+// }
+
+
+saudacao(tchau, "lucas")
+
+let usuario = ["adriano","marcia","jose"]
+
+function inserirUsuario(nome, callback){
+    setTimeout(() => {
+        usuario.push(nome);
+        callback();
+    }, 1000);
 }
 
-let triplo = function (y){
-console.log(this.x*3)
+function listarUsuarios(){
+    console.log(usuario)
 }
 
-let quadruplo = z => z*4
-
-let numero = {
-    x: 5,
-    calc: dobro
-}
-
-let numero1 = {
-    x: 100,
-    calc: dobro
-}
-
-let numero2 = {
-    x: 5,
-    calc: dobro
-}
-
-numero.calc()
-
-let numBind = dobro.bind(numero1)
-numBind();
+inserirUsuario("lucas", listarUsuarios)
