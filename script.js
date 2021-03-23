@@ -9,20 +9,11 @@ let alunos = [
     novoAluno("João",35),
 ]
 
-function idadeDaTurma (total,aluno){
-    total += aluno.idade
-    return total 
-} 
-
-let totalIdadeAlunos = alunos.reduce(idadeDaTurma,0)
-
-let media = (qtd, divisao) =>{
-    let total = null;
-    total = qtd/divisao;
-    return total;
+let juntaLetra = (string, primeiroNome) =>{
+    return string + primeiroNome.nome;
 }
 
-console.log(totalIdadeAlunos)
-console.log("média do total de alunos: "+media(totalIdadeAlunos, alunos.length))
+console.log(alunos.reduce(juntaLetra,""))
+console.log(alunos.reduce(juntaLetra,"Esses são todos nome juntos: "))
 
 
