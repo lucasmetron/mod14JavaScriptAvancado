@@ -1,36 +1,21 @@
+let notasTurma1 = [10,5,8,7];
 
+let notasTurma2 = [5,7,6,10];
 
-function novoAluno (nome,idade){
-    return {nome, idade}
+let copia = [...notasTurma1, ...notasTurma2]
+
+copia.push(2);
+
+let media = ()=> {
+    let somaNotas = null;
+    for (i = 0; i < copia.length; i++){
+        somaNotas = copia[i] + somaNotas
+    }
+    return somaNotas/copia.length
 }
 
-// let alunos = [
-//     novoAluno("Mario",23),
-//     novoAluno("Jose",45),
-//     novoAluno("Marcia",29),
-//     novoAluno("Joao",35),
-// ]
+console.log(media())
 
-// let alunoDaquiA5anos = (aluno) => {
-//     return aluno.idade +5
-// }
-// let maior30 = (aluno) => {
-//     if (aluno.idade > 30){
-//         return aluno
-//     } 
-// }
-
-let alunos = [
-    novoAluno("Mario",23),
-    novoAluno("Jose",45),
-    novoAluno("Marcia",29),
-    novoAluno("Joao",35),
-]
-let novosAlunos = new Array(...alunos)
-let novosAlunos = alunos.slice()
-let novosAlunos = [...alunos]
-novosAlunos.push(novoAluno("teste", 25))
-
-console.log(alunos)
-console.log(novosAlunos)
-
+console.log(notasTurma1)
+console.log(notasTurma2)
+console.log(copia)
