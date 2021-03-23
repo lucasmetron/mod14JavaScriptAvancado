@@ -12,24 +12,15 @@ let alunos = [
 ]
 
 
-let jogadores = [
-    novoAluno("lais",23),
-    novoAluno("lucas",45),
-    novoAluno("wagner",29),
-    novoAluno("bianca",35),
-]
+let nomeIdade = (aluno) => aluno.nome + " tem "+ aluno.idade + " anos."
 
-function temMenosde30(qualquercoisa){
-    return qualquercoisa.idade < 30
+let maior30 = (aluno) => {
+    if (aluno.idade > 30){
+        return aluno
+    } 
 }
 
-function temMaisde30(qualquercoisa){
-    return qualquercoisa.idade >= 30
-}
+let filterEmap = alunos.filter(maior30).map(nomeIdade)
 
-let alunosMenosde30 = alunos.filter(temMenosde30)
-let jogadoresMais30 = jogadores.filter(temMaisde30)
-
-console.log(alunosMenosde30)
-console.log(jogadoresMais30)
+console.log(filterEmap)
 
