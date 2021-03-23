@@ -9,12 +9,20 @@ let alunos = [
     novoAluno("João",35),
 ]
 
-let menor30 = (aluno) => aluno.idade < 30
+function idadeDaTurma (total,aluno){
+    total += aluno.idade
+    return total 
+} 
 
-let juntaTudo = (aluno) => aluno.nome + " possui "+ aluno.idade + " anos."
+let totalIdadeAlunos = alunos.reduce(idadeDaTurma,0)
 
-let alunosMenores30 = alunos.filter(menor30)
-let alunosJuntados = alunos.map(juntaTudo);
+let media = (qtd, divisao) =>{
+    let total = null;
+    total = qtd/divisao;
+    return total;
+}
 
-console.log(alunosMenores30.map(juntaTudo))
-console.log(alunosJuntados)
+console.log(totalIdadeAlunos)
+console.log("média do total de alunos: "+media(totalIdadeAlunos, alunos.length))
+
+
