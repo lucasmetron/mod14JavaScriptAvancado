@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,38 @@
     <title>Js Avançado</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
+    <div class="conteiner">
+
+        <div class="conversor">
+
+
+            <form>
+
+                <div class="radios">
+                    
+                    <label for="dolar"> Dolar
+                        <input class="radio" id="dolar" type="radio" value="dolar" name="moeda" checked>
+                    </label>
     
+                    <input class="radio" id="euro" type="radio" value="euro" name="moeda">
+                    <label for="euro">Euro</label><br>
+                </div>
+
+
+
+                <input type="text" id="valor" placeholder="Digite o valor em R$">
+                <input type="button" value="converter" onclick="converter()">
+            </form>
+
+            <h1 id="resultado"></h1>
+
+        </div>
+    </div>
+
+
     <script src="./script.js"></script>
 </body>
+
 </html>

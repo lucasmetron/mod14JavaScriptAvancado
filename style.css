@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.conteiner{
+    background-color: aqua;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.conversor{
+    background-color: bisque;
+    padding: 10px;
+}
+
+.radios{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+form input[type="radio"]{
+    list-style: none;
+    display: none;
+    width: 100%;
+}
+
+li{
+    list-style: none;
+}
+
+label {
+    display: inline-block;
+    width: 45%;
+    border: solid 1px ;
+}
+
+label:hover{
+    background-color: blueviolet;
+}
