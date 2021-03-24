@@ -9,35 +9,36 @@ let alunos = [
     novoAluno("João",35),
 ]
 
-function somaNumeros (numero){
-    let total = null;
-
-    for (i=0; i < numero.length ; i++){
-        total += numero[i].idade
+function juntaTudo(obj){
+    let arrayTudo = [];
+    let juntador;
+    for(i=0; i< obj.length; i++){
+        juntaTudo = obj[i].nome + " possui "+obj[i].idade+ " anos."
+        arrayTudo.push(juntaTudo)
     }
-    return "total de idade é "+total;
+    return arrayTudo;
 }
 
-function juntaNomes (pessoa){
-    let junto = "";
-    for (i=0; i <pessoa.length ; i++){
-        junto += pessoa[i].nome
+function trocaChave(obj){
+    for(i=0; i< obj.length; i++){
+        return {name: obj[i].nome, age: obj[i].idade}
+        
     }
-
-    return "Esses são todos nomes juntos "+junto
 }
 
-console.log(somaNumeros(alunos))
-console.log(juntaNomes(alunos))
+console.log(trocaChave(alunos))
+console.log(juntaTudo(alunos))
 
+// function juntaIdadeNome (obj) {
+//     let soma = obj.idade + 5;
+//     return obj.nome + " possui "+obj.idade+ " anos. E daqui 5 anos "+obj.nome+ " terá: "+soma
+// }
 
-// function idadeTurma (total, obj){
-//     return  total + obj.idade
+// function mudaChave(obj){
+//     return {
+//         name: obj.nome,
+//         age: obj.idade
+//     }
 // }
-// function nomeJunto (string, obj){
-//     return string + obj.nome;
-// }
-// let numeroSomados = alunos.reduce(idadeTurma,0)
-// let nomesJuntos = alunos.reduce(nomeJunto, "")
-// console.log(numeroSomados)
-// console.log(nomesJuntos)
+// console.log(alunos.map(juntaIdadeNome))
+// console.log(alunos.map(mudaChave))
