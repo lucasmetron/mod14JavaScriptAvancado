@@ -107,7 +107,10 @@ label {
     border: solid 1px ;
 }
 
-
+@keyframes resultado {
+    0%{left: -1000px; }
+    100%{left:0;} 
+}
 
 
 .mostrador{
@@ -123,7 +126,3 @@ label {
 }
 
 
-@keyframes resultado {
-    0%{left: -1000px; }
-    100%{left:0;} 
-}
