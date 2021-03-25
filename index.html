@@ -12,29 +12,35 @@
 <body>
     <div class="conteiner">
 
-        <div class="conversor">
+        <div class="titulo">Conversor de Moedas</div>
+
+        <!-- <div class="conversor"> -->
 
 
             <form>
 
                 <div class="radios">
-                    
-                    <label for="dolar"> Dolar
-                        <input class="radio" id="dolar" type="radio" value="dolar" name="moeda" checked>
-                    </label>
+
+                    <input class="radio" id="dola" type="radio" value="dolar" name="moeda" checked>
+                    <label for="dola"> Dolar </label>
     
-                    <input class="radio" id="euro" type="radio" value="euro" name="moeda">
-                    <label for="euro">Euro</label><br>
+                    <input class="radio" id="eur" type="radio" value="euro" name="moeda">
+                    <label for="eur">Euro </label><br>
                 </div>
 
 
 
                 <input type="text" id="valor" placeholder="Digite o valor em R$">
-                <input type="button" value="converter" onclick="converter()">
+                <input type="button" value="Converter" onclick="converter()">
             </form>
 
-            <h1 id="resultado"></h1>
+           
+            
 
+        <!-- </div> -->
+
+        <div class="mostrador"id="resultado">
+            
         </div>
     </div>
 

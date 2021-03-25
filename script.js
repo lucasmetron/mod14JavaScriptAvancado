@@ -22,7 +22,8 @@ function converter (){
           return res.json()
         }).then((data)=>{
             cotacaoDolar = data.rates.BRL;
-            document.getElementById("resultado").innerHTML = "Valor em dolar: $"+cotacaoDolar * valor
+            document.getElementById("resultado").innerHTML = "<h2>Valor do dólar hoje: $"+cotacaoDolar.toFixed(2) + "</h2> <h2> R$"+ valor+" reais equivale a: $" + valor * cotacaoDolar.toFixed(2) +" dólares</h2>"
+            console.log(data)
         })
     } else {
         fetch(realToEuro)
@@ -30,7 +31,7 @@ function converter (){
             return res.json()
         }).then((data)=>{
             cotacaoEuro = data.rates.BRL;
-            document.getElementById("resultado").innerHTML = "Valor em euros: €"+cotacaoEuro * valor
+            document.getElementById("resultado").innerHTML = "<h2>Valor do euro hoje: €"+cotacaoEuro + "</h2> <h2> R$"+ valor+" reais equivale a: €" + valor * cotacaoEuro +" euros</h2>"
         })
     }
 
@@ -38,35 +39,3 @@ function converter (){
     
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let a = {
-//     nome: "Lucas",
-//     nota: 8.5,
-// } 
-
-// let b = JSON.stringify(a)
-// let c = JSON.parse(b)
-
-
-// console.log(url)
